@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    background-image: url("pta.png")
+}
+
+.container {
+    width: 60%;
+    display: flex;
+    height: 650px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #C51A4A;
+}
+
+/* Sign In Box */
+.container .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.container .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form h3 {
+    color: #222;
+    font-size: 32px;
+}
+
+.form span {
+    color: #3a3838;
+    margin-bottom: 20px;
+}
+
+#form_input .type {
+    width: 330px;
+    height: 48px;
+    background-color: #EEEDEF;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+#form_input .type input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+#form_input .type input::placeholder {
+    color: #A9A8A9;
+}
+
+#form_input .forgot {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.bkg {
+    background-color: #FF4167;
+    color: white;
+    padding: 12px 45px;
+    border-radius: 22px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bkg:hover {
+    background-color: #e03b56;
+}
+
+/* Overlay Section */
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-color: #FF4167;
+    text-align: center;
+}
+
+.overlay .page h3 {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.overlay .page p {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .container {
+        width: 90%;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container .box,
+    .overlay {
+        width: 100%;
+        height: auto;
+    }
+
+    .form h3 {
+        font-size: 28px;
+    }
+
+    #form_input .type {
+        width: 100%;
+    }
+
+    .bkg {
+        padding: 10px 30px;
+        margin-top: -1px; /* Reduced margin-top to move the button closer */
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .overlay .page h3 {
+        font-size: 24px;
+    }
+
+    .overlay .page p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form h3 {
+        font-size: 24px;
+    }
+
+    #form_input .type {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .bkg {
+        padding-bottom: 8px;
+        margin-top: 0px; /* Reduced margin-top for smaller screens */
+        font-size: 12px;
+    }
+
+    .overlay .page h3 {
+        font-size: 20px;
+    }
+
+    .overlay .page p {
+        font-size: 10px;
+    }
+}
+

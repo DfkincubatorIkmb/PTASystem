@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTA Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="form sign_in">
+                <h3>Sign In</h3>
+                <span>or use your account</span>
+                <form action="./index3.php" id="form_input" method="post">
+                    <div class="type">
+                        <input type="email" placeholder="ptaa37515@gmail.com" name="" id="email">
+                    </div>
+                    <div class="type">
+                        <input type="password" placeholder="password" name="" id="password">
+                    </div>
+                    <div class="forgot">
+                        <span>Forgot your password?</span>
+                    </div>
+                    <button class="btn bkg">Sign In</button>
+                </form>
+            </div>
+        </div>
+        <div class="overlay">
+            <div class="page page_signIn">
+                <h3>Welcome Back!</h3>
+                <p>To keep with us, please login with your personal info</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Form submission and login validation
+        document.getElementById("form_input").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Predefined login credentials
+            const allowedEmail = "ptaa37515@gmail.com";
+            const allowedPassword = "password";
+
+            // Get user inputs
+            const emailInput = document.getElementById("email").value;
+            const passwordInput = document.getElementById("password").value;
+
+            // Validate credentials
+            if (emailInput === allowedEmail && passwordInput === allowedPassword) {
+                alert("Log masuk berjaya!");
+                window.location.href = "./index3.php"; // Redirect to next page
+            } else {
+                alert("Email atau kata laluan tidak sah!");
+            }
+        });
+    </script>
+</body>
+</html>

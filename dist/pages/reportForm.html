@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Report Form</title>
+    <style>
+        /* Existing CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        .header {
+            background-color: #ff4267;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1s ease-in-out;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, textarea {
+            margin-top: 8px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus {
+            border-color: #ff4267;
+            outline: none;
+            box-shadow: 0 0 10px rgba(221, 61, 95, 0.829);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #ff4267;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .btn:hover {
+            background-color: #ff4267;
+            transform: scale(1.05);
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Customer Support
+    </div>
+    <div class="container">
+        <form id="reportForm" method="POST" action="submit_form.php">
+
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="report-title">Report Title</label>
+            <input type="text" id="report-title" name="report-title" placeholder="Enter the report title" required>
+
+            <label for="date">Report Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="model-name">Model</label>
+            <input type="text" id="model-name" name="model-name" placeholder="Enter your model name" required>
+
+            <label for="serial-number">Serial Number</label>
+            <input type="text" id="serial-number" name="serial-number" placeholder="Enter your model serial number" required>
+
+            <label for="report-description">Description</label>
+            <textarea id="report-description" name="report-description" rows="4" placeholder="Enter a description or additional notes" required></textarea>
+            
+            <button type="submit" class="btn">Submit Report</button>
+        </form>
+        <div id="message" style="display:none; margin-top: 20px; color: green; font-weight: bold;">Your report has been submitted successfully!</div>
+    </div>
+
+
+    
+</body>
+</html>
