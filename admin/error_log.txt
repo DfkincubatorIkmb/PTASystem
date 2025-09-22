@@ -1,0 +1,198 @@
+[06-Sep-2025 13:32:16 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:16 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:16 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:16 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:17 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:17 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:17 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:17 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:17 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:17 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:17 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:17 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:18 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:19 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:20 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:20 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:20 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:20 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:20 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:20 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:20 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:20 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:36 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:36 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:36 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:36 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(171): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:49 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:49 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:49 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:49 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(170): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:50 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:50 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:50 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:50 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(170): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:50 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:50 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:32:50 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:32:50 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(170): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(169): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(169): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:47 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(169): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:48 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:48 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:48 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:48 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(169): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:48 Europe/Berlin] PHP Warning:  include(includes/config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:48 Europe/Berlin] PHP Warning:  include(): Failed opening 'includes/config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\dashboard\admin\complaint-details.php on line 7
+[06-Sep-2025 13:34:48 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58
+[06-Sep-2025 13:34:48 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\dashboard\admin\include\sidebar.php:58
+Stack trace:
+#0 C:\xampp\htdocs\dashboard\admin\include\sidebar.php(58): mysqli_query(NULL, 'SELECT * FROM t...')
+#1 C:\xampp\htdocs\dashboard\admin\complaint-details.php(169): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\dashboard\admin\include\sidebar.php on line 58

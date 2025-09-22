@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional log in form for customer/user">
+    <meta name="keywords" content="log in form, web design, html, css, javascript">
+    <meta name="author" content="Website Creator">
+    <meta name="robots" content="index, follow">
+    <title>log in form</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%90%3C/text%3E%3C/svg%3E">
+
+    <!--
+      SINGLE-FILE WEBSITE
+      - Vanilla HTML5, CSS3, and JavaScript (ES6+)
+      - All CSS and JS are embedded
+      - Uses browser localStorage for persistence
+      - No external dependencies (fonts, libs, images)
+      - Includes comments for clarity & maintainability
+    -->
+
+    <style>
+        :root{
+            --bg: #0f1021;              /* deep ink */
+            --bg-soft:#151637;          /* card background */
+            --text:#eaf2ff;             /* primary text */
+            --muted:#c9d6ff;            /* secondary text */
+            --primary:#4361ee;          /* blue */
+            --accent:#3a0ca3;           /* purple */
+            --ok:#00c853;               /* success */
+            --warn:#ffab00;             /* warning */
+            --danger:#ff5252;           /* error */
+            --radius: 18px;
+            --shadow: 0 10px 30px rgba(0,0,0,.35);
+            --shadow-soft: 0 6px 16px rgba(0,0,0,.25);
+            --focus: 0 0 0 3px rgba(67,97,238,.35);
+        }
+        /* Reset-ish */
+        *,*::before,*::after{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0; font-family: ui-rounded, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Color Emoji", "Apple Color Emoji", sans-serif;
+            color:var(--text); background: radial-gradient(1200px 800px at 80% -10%, rgba(58,12,163,.45), transparent 60%),
+                                 radial-gradient(800px 600px at -10% 20%, rgba(67,97,238,.35), transparent 55%),
+                                 var(--bg);
+            line-height:1.6; overflow-x:hidden;
+        }
+        h1,h2,h3{line-height:1.15; margin:0 0 .4rem}
+        h1{font-size:clamp(2rem,4vw,3rem); font-weight:800; letter-spacing:.5px}
+        h2{font-size:clamp(1.4rem,2.8vw,2rem); font-weight:800}
+        h3{font-size:clamp(1.1rem,2vw,1.25rem); font-weight:700}
+        p{margin:.25rem 0 .75rem; color:var(--muted)}
+        a{color:#a5b4ff; text-decoration:none}
+        a:hover{opacity:.9; text-decoration:underline}
+        img{max-width:100%; display:block}
+        button{font:inherit}
+
+        /* Playful display headings (no external fonts): emulate with letter spacing & shadow */
+        .display{font-weight:900; letter-spacing:.5px; text-shadow: 0 3px 10px rgba(58,12,163,.3)}
+
+        /* Layout */
+        header{
+            position:sticky; top:0; z-index:50;
+            backdrop-filter:saturate(150%) blur(8px);
+            background: linear-gradient(180deg, rgba(15,16,33,.9), rgba(15,16,33,.55));
+            border-bottom:1px solid rgba(255,255,255,.08);
+        }
+        .nav{max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:.75rem 1rem}
+        .brand{display:flex; gap:.6rem; align-items:center; font-weight:900}
+        .logo{width:34px; height:34px; border-radius:10px; display:grid; place-items:center; background: linear-gradient(135deg, var(--primary), var(--accent)); box-shadow: var(--shadow-soft)}
+        .logo svg{width:20px; height:20px; fill:white}
+        .nav a{padding:.5rem .75rem; border-radius:12px; transition: transform .15s ease, background .2s ease}
+        .nav a:hover{background:rgba(255,255,255,.06); transform:translateY(-1px)}
+        .nav-cta{background: linear-gradient(135deg,var(--primary),var(--accent)); color:white !important; box-shadow: var(--shadow-soft)}
+        .nav-cta:hover{transform:translateY(-1px) scale(1.01)}
+
+        main{max-width:1100px; margin:0 auto; padding: 2rem 1rem 5rem; display:grid; gap:3rem}
+
+        /* Hero */
+        .hero{display:grid; grid-template-columns:1.2fr 1fr; gap:2rem; align-items:center}
+        .hero-card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding:1.2rem; box-shadow: var(--shadow)}
+        .pill{display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .7rem; border-radius:999px; font-size:.85rem; background:rgba(67,97,238,.15); color:#cddbff; border:1px solid rgba(67,97,238,.35)}
+
+        /* Cards Grid */
+        .grid{display:grid; grid-template-columns: repeat( auto-fit, minmax(240px, 1fr)); gap:1rem}
+        .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding:1rem; box-shadow: var(--shadow-soft)}
+        .card:hover{transform: translateY(-2px); transition: transform .2s ease}
+
+        /* Forms */
+        .form{display:grid; gap:.75rem}
+        label{font-weight:700}
+        .input{width:100%; padding:.85rem 1rem; background:#0b0c1c; color:var(--text); border:1px solid rgba(255,255,255,.12); border-radius:14px; outline:none; transition:border .2s ease, box-shadow .2s ease}
+        .input:focus{border-color: rgba(67,97,238,.7); box-shadow: var(--focus)}
+        .hint{font-size:.85rem; color:#b8c6ff}
+        .btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.8rem 1rem; border-radius:14px; border:none; color:white; cursor:pointer; background: linear-gradient(135deg,var(--primary),var(--accent)); box-shadow: var(--shadow-soft); transition: transform .15s ease, filter .2s ease}
+        .btn:hover{transform: translateY(-1px)}
+        .btn:disabled{opacity:.6; cursor:not-allowed; filter:grayscale(.2)}
+        .btn.secondary{background: none; color:#cfd8ff; border:1px solid rgba(255,255,255,.15)}
+        .row{display:flex; gap:.6rem; flex-wrap:wrap}
+        .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+        .status{min-height:1.25rem}
+
+        /* Dashboard */
+        .dash{display:grid; gap:1rem}
+        .stats{display:grid; grid-template-columns: repeat( auto-fit, minmax(180px, 1fr)); gap:1rem}
+        .stat{padding:1rem; background:#101235; border:1px solid rgba(255,255,255,.08); border-radius:14px}
+
+        /* Footer */
+        footer{border-top:1px solid rgba(255,255,255,.08); background:rgba(10,10,20,.4)}
+        .foot{max-width:1100px; margin:0 auto; padding:1.25rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; font-size:.95rem}
+
+        /* Utility */
+        .hidden{display:none !important}
+        .center{display:grid; place-items:center}
+        .chip{display:inline-flex; align-items:center; gap:.5rem; padding:.4rem .6rem; border-radius:999px; font-size:.85rem; border:1px solid rgba(255,255,255,.12)}
+        .divider{height:1px; background:rgba(255,255,255,.08); margin:.5rem 0}
+
+        /* Loader */
+        .loader{width:18px; height:18px; border-radius:50%; border:3px solid rgba(255,255,255,.25); border-top-color:#fff; animation: spin .8s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+
+        /* Responsive */
+        @media (max-width: 860px){
+            .hero{grid-template-columns:1fr}
+            .nav .hide-sm{display:none}
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================= -->
+    <!-- Header / Navigation -->
+    <!-- ========================================= -->
+    <header aria-label="Top Navigation">
+        <nav class="nav" role="navigation">
+            <div class="brand" aria-label="Brand">
+                <span class="logo" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm0 3.2a6.8 6.8 0 1 1-6.8 6.8A6.807 6.807 0 0 1 12 5.2Zm0 2.6a4.2 4.2 0 1 0 4.2 4.2A4.2 4.2 0 0 0 12 7.8Z"/></svg>
+                </span>
+                <span>LogInPro</span>
+            </div>
+            <div class="row">
+                <a class="hide-sm" href="#home">Home</a>
+                <a class="hide-sm" href="#features">Features</a>
+                <a class="hide-sm" href="#about">About</a>
+                <a class="nav-cta" href="#auth" id="navAuth">Log In</a>
+                <a class="nav-cta hidden" href="#dashboard" id="navDash">Dashboard</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ========================================= -->
+        <!-- Hero Section -->
+        <!-- ========================================= -->
+        <section id="home" class="hero" aria-labelledby="heroTitle">
+            <div>
+                <span class="pill">Secure • Fast • Simple</span>
+                <h1 id="heroTitle" class="display">Welcome to Your Lightweight Login</h1>
+                <p>Single-file, modern, and privacy-friendly login experience using only <strong>vanilla HTML/CSS/JS</strong> and <strong>localStorage</strong> for persistence.</p>
+                <div class="row" role="group" aria-label="Primary actions">
+                    <a class="btn" href="#auth">Get Started</a>
+                    <a class="btn secondary" href="#features">Explore Features</a>
+                </div>
+                <div class="divider"></div>
+                <div class="chip" aria-live="polite"><span aria-hidden="true">⚡</span>Works offline after first load</div>
+            </div>
+            <div class="hero-card" aria-label="Quick Login Widget">
+                <h2 class="display" style="font-size:1.4rem">Quick Login</h2>
+                <form id="quickLoginForm" class="form" autocomplete="on">
+                    <label for="qlUser">Username</label>
+                    <input id="qlUser" name="username" class="input" placeholder="e.g. demo" required>
+                    <label for="qlPass">Password</label>
+                    <input id="qlPass" name="password" type="password" class="input" placeholder="••••••••" required>
+                    <div class="row">
+                        <button class="btn" type="submit">
+                            <span>Log In</span>
+                            <span id="qlLoad" class="loader hidden" aria-hidden="true"></span>
+                        </button>
+                        <button class="btn secondary" type="button" id="gotoRegister">Create Account</button>
+                    </div>
+                    <p id="qlStatus" class="status" role="status" aria-live="polite"></p>
+                </form>
+                <p class="hint">Tip: A demo account is seeded on first load → <strong>demo / demo123</strong></p>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- Features Section -->
+        <!-- ========================================= -->
+        <section id="features" aria-labelledby="featTitle">
+            <h2 id="featTitle" class="display">Why this template?</h2>
+            <div class="grid" role="list">
+                <article class="card" role="listitem">
+                    <h3>Pure Vanilla</h3>
+                    <p>No frameworks, no builds. Just open in your browser.</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>Persistent</h3>
+                    <p>Uses <code>localStorage</code> for users and sessions with safe parsing and error handling.</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>Responsive</h3>
+                    <p>Crafted with Flexbox & Grid. Looks great on phones, tablets, and desktops.</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>Accessible</h3>
+                    <p>Proper labels, roles, focus styles, and live regions for status updates.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- Authentication Section (Register / Login) -->
+        <!-- ========================================= -->
+        <section id="auth" aria-labelledby="authTitle" class="grid">
+            <h2 id="authTitle" class="display">Sign In / Sign Up</h2>
+            <div class="grid" style="grid-template-columns: repeat( auto-fit, minmax(260px, 1fr)); align-items:start">
+                <!-- Login Card -->
+                <article class="card" aria-label="Login form">
+                    <h3>Log In</h3>
+                    <form id="loginForm" class="form" autocomplete="on">
+                        <label for="liUser">Username</label>
+                        <input id="liUser" name="username" class="input" required>
+                        <label for="liPass">Password</label>
+                        <input id="liPass" name="password" type="password" class="input" required>
+                        <div class="row">
+                            <button class="btn" type="submit">
+                                <span>Log In</span>
+                                <span id="liLoad" class="loader hidden" aria-hidden="true"></span>
+                            </button>
+                            <button class="btn secondary" type="button" id="loginReset">Reset</button>
+                        </div>
+                        <p id="liStatus" class="status" role="status" aria-live="polite"></p>
+                    </form>
+                </article>
+
+                <!-- Register Card -->
+                <article class="card" aria-label="Registration form">
+                    <h3>Create Account</h3>
+                    <form id="registerForm" class="form" autocomplete="on">
+                        <label for="reUser">Username</label>
+                        <input id="reUser" name="username" class="input" minlength="3" maxlength="24" required>
+                        <label for="rePass">Password</label>
+                        <input id="rePass" name="password" type="password" class="input" minlength="6" required>
+                        <label for="rePass2">Confirm Password</label>
+                        <input id="rePass2" name="password2" type="password" class="input" minlength="6" required>
+                        <div class="row">
+                            <button class="btn" type="submit">
+                                <span>Create</span>
+                                <span id="reLoad" class="loader hidden" aria-hidden="true"></span>
+                            </button>
+                            <button class="btn secondary" type="button" id="registerReset">Reset</button>
+                        </div>
+                        <p id="reStatus" class="status" role="status" aria-live="polite"></p>
+                        <p class="hint">Passwords are hashed in-browser using SHA‑256 before storage. <strong>Do not use real credentials.</strong></p>
+                    </form>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- Dashboard (Visible when logged in) -->
+        <!-- ========================================= -->
+        <section id="dashboard" class="hidden" aria-labelledby="dashTitle">
+            <h2 id="dashTitle" class="display">Your Dashboard</h2>
+            <div class="dash">
+                <div class="grid stats">
+                    <div class="stat">
+                        <h3>Signed in as</h3>
+                        <p id="dashUser" style="font-weight:800; color:#dfe6ff">—</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Member Since</h3>
+                        <p id="dashSince">—</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Session</h3>
+                        <p id="dashSession">Active</p>
+                    </div>
+                </div>
+
+                <article class="card">
+                    <h3>Profile</h3>
+                    <form id="profileForm" class="form">
+                        <label for="pfDisplay">Display Name</label>
+                        <input id="pfDisplay" class="input" placeholder="Optional nickname">
+                        <div class="row">
+                            <button class="btn" type="submit">Save Profile</button>
+                            <button class="btn secondary" type="button" id="logoutBtn">Log Out</button>
+                        </div>
+                        <p id="pfStatus" class="status" role="status" aria-live="polite"></p>
+                    </form>
+                </article>
+
+                <article class="card">
+                    <h3>Data Management</h3>
+                    <div class="row" role="group" aria-label="Data actions">
+                        <button class="btn secondary" id="exportBtn" type="button">Export Data</button>
+                        <button class="btn secondary" id="importBtn" type="button">Import Data</button>
+                        <button class="btn" style="background:linear-gradient(135deg,var(--warn),#ff7043)" id="seedBtn" type="button">Re-seed Demo User</button>
+                        <button class="btn" style="background:linear-gradient(135deg,var(--danger),#c62828)" id="wipeBtn" type="button">Wipe All (Local)</button>
+                    </div>
+                    <p class="hint">All data lives in your browser only. Clearing site data or using another browser/device removes it.</p>
+                    <textarea id="dataArea" class="input" rows="6" placeholder="Exported JSON appears here..."></textarea>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- About / Help -->
+        <!-- ========================================= -->
+        <section id="about" aria-labelledby="aboutTitle">
+            <h2 id="aboutTitle" class="display">How data is stored</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>localStorage Keys</h3>
+                    <ul>
+                        <li><code>auth:users</code> → Array of user objects { username, passHash, createdAt, profile }</li>
+                        <li><code>auth:currentUser</code> → String username of the active session</li>
+                    </ul>
+                    <p class="hint">We safely <em>parse</em> JSON and always <em>fallback</em> to defaults on errors.</p>
+                </article>
+                <article class="card">
+                    <h3>Setup Instructions</h3>
+                    <ol>
+                        <li>Save this HTML as <strong>index.html</strong>.</li>
+                        <li>Open it directly in any modern browser.</li>
+                        <li>Use the demo account <code>demo/demo123</code> or create a new one.</li>
+                    </ol>
+                </article>
+                <article class="card">
+                    <h3>Security Notes</h3>
+                    <p>This is a demonstration. localStorage is not secure; data is readable by anyone with device/browser access. For production, use server-side auth, HTTPS, HTTP-only cookies, and stronger hashing with proper salting and rate limiting.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================= -->
+    <!-- Footer -->
+    <!-- ========================================= -->
+    <footer role="contentinfo">
+        <div class="foot">
+            <div class="row">
+                <span class="chip"><span aria-hidden="true">🛠️</span> Vanilla HTML/CSS/JS</span>
+                <span class="chip"><span aria-hidden="true">💾</span> localStorage Persistence</span>
+                <span class="chip"><span aria-hidden="true">🔒</span> Client-side Demo</span>
+            </div>
+            <div>© <span id="year"></span> LogInPro • Built for modern browsers</div>
+        </div>
+    </footer>
+
+    <!-- ========================================= -->
+    <!-- Scripts: Authentication, Persistence, UI -->
+    <!-- ========================================= -->
+    <script>
+    // Smooth scrolling for anchor links (reduced-motion aware)
+    (function(){
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.addEventListener('click', (e)=>{
+            const a = e.target.closest('a[href^="#"]');
+            if(!a) return;
+            const id = a.getAttribute('href');
+            const el = document.querySelector(id);
+            if(!el) return;
+            e.preventDefault();
+            el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start'});
+        });
+    })();
+
+    // ---------- localStorage helpers ----------
+    // All read/write access to localStorage passes through these functions
+    const store = {
+        read(key, fallback){
+            try{
+                const raw = localStorage.getItem(key);
+                if(raw === null || raw === undefined) return fallback;
+                return JSON.parse(raw);
+            }catch(err){
+                console.warn('Failed to parse localStorage key', key, err);
+                return fallback; // safe fallback on malformed JSON
+            }
+        },
+        write(key, value){
+            try{ localStorage.setItem(key, JSON.stringify(value)); return true; }
+            catch(err){ console.error('Failed to write localStorage key', key, err); return false; }
+        },
+        remove(key){ try{ localStorage.removeItem(key); }catch(err){ console.error('Failed to remove key', key, err);} }
+    };
+
+    // Data schema (example):
+    // users: [ { username: 'demo', passHash: 'hexstring', createdAt: 1680000000000, profile: { displayName: 'Demo' } } ]
+
+    const KEYS = {
+        USERS: 'auth:users',
+        CURRENT: 'auth:currentUser'
+    };
+
+    // Seed demo user if missing
+    (async function seedDemo(){
+        const users = store.read(KEYS.USERS, []);
+        const exists = users.some(u => u.username === 'demo');
+        if(!exists){
+            const passHash = await hash('demo123');
+            const demo = { username: 'demo', passHash, createdAt: Date.now(), profile: { displayName: 'Demo User' } };
+            users.push(demo);
+            store.write(KEYS.USERS, users);
+        }
+    })();
+
+    // Hash utility using SubtleCrypto (SHA-256)
+    async function hash(text){
+        const enc = new TextEncoder();
+        const data = enc.encode(text);
+        const buf = await crypto.subtle.digest('SHA-256', data);
+        return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+
+    // Authentication API (client-side demo only)
+    const auth = {
+        async register(username, password){
+            username = (username || '').trim().toLowerCase();
+            if(username.length < 3) throw new Error('Username must be at least 3 characters.');
+            if(password.length < 6) throw new Error('Password must be at least 6 characters.');
+            const users = store.read(KEYS.USERS, []);
+            if(users.some(u => u.username === username)) throw new Error('Username is already taken.');
+            const passHash = await hash(password);
+            const user = { username, passHash, createdAt: Date.now(), profile: { displayName: '' } };
+            users.push(user);
+            if(!store.write(KEYS.USERS, users)) throw new Error('Failed to save user. Storage quota?');
+            return true;
+        },
+        async login(username, password){
+            const users = store.read(KEYS.USERS, []);
+            const u = users.find(x => x.username === (username||'').trim().toLowerCase());
+            if(!u) throw new Error('User not found.');
+            const passHash = await hash(password);
+            if(passHash !== u.passHash) throw new Error('Incorrect password.');
+            store.write(KEYS.CURRENT, u.username);
+            return u;
+        },
+        current(){
+            const uname = store.read(KEYS.CURRENT, null);
+            if(!uname) return null;
+            const users = store.read(KEYS.USERS, []);
+            return users.find(u => u.username === uname) || null;
+        },
+        logout(){ store.remove(KEYS.CURRENT); },
+        updateProfile(updates){
+            const users = store.read(KEYS.USERS, []);
+            const cur = auth.current(); if(!cur) return false;
+            const idx = users.findIndex(u => u.username === cur.username);
+            if(idx === -1) return false;
+            users[idx].profile = { ...users[idx].profile, ...updates };
+            return store.write(KEYS.USERS, users);
+        }
+    };
+
+    // UI Helpers
+    function $(sel){ return document.querySelector(sel); }
+    function show(el){ el.classList.remove('hidden'); }
+    function hide(el){ el.classList.add('hidden'); }
+    function setStatus(el, msg, type='info'){
+        el.textContent = msg || '';
+        el.style.color = ({ ok:'var(--ok)', warn:'var(--warn)', error:'var(--danger)', info:'var(--muted)'}[type]) || 'var(--muted)';
+    }
+
+    // Populate year
+    $('#year').textContent = new Date().getFullYear();
+
+    // Navigation auth toggle
+    function refreshNav(){
+        const logged = !!auth.current();
+        $('#navAuth').classList.toggle('hidden', logged);
+        $('#navDash').classList.toggle('hidden', !logged);
+    }
+
+    // Initialize dashboard state
+    function refreshDashboard(){
+        const u = auth.current();
+        const dash = $('#dashboard');
+        if(u){
+            $('#dashUser').textContent = u.profile?.displayName || u.username;
+            $('#pfDisplay').value = u.profile?.displayName || '';
+            $('#dashSince').textContent = new Date(u.createdAt).toLocaleString();
+            $('#dashSession').textContent = 'Active';
+            show(dash);
+        } else {
+            hide(dash);
+        }
+        refreshNav();
+    }
+
+    // Handle Quick Login
+    $('#quickLoginForm').addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const f = e.currentTarget;
+        const user = f.username.value; const pass = f.password.value;
+        hide($('#qlStatus')); show($('#qlLoad'));
+        try{
+            await auth.login(user, pass);
+            setStatus($('#qlStatus'), 'Login successful! Redirecting to dashboard…', 'ok');
+            show($('#qlStatus'));
+            refreshDashboard();
+            location.hash = '#dashboard';
+        }catch(err){ setStatus($('#qlStatus'), err.message, 'error'); show($('#qlStatus')); }
+        finally{ hide($('#qlLoad')); }
+    });
+    $('#gotoRegister').addEventListener('click', ()=>{ location.hash = '#auth'; $('#reUser').focus(); });
+
+    // Login form
+    $('#loginForm').addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const f = e.currentTarget; const user = f.username.value; const pass = f.password.value;
+        show($('#liLoad')); setStatus($('#liStatus'), 'Processing…');
+        try{ await auth.login(user, pass); setStatus($('#liStatus'), 'Welcome back!','ok'); refreshDashboard(); location.hash = '#dashboard'; }
+        catch(err){ setStatus($('#liStatus'), err.message, 'error'); }
+        finally{ hide($('#liLoad')); }
+    });
+    $('#loginReset').addEventListener('click', ()=>{ $('#loginForm').reset(); setStatus($('#liStatus'), ''); });
+
+    // Register form
+    $('#registerForm').addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const f = e.currentTarget;
+        const u = f.username.value; const p1 = f.password.value; const p2 = f.password2.value;
+        if(p1 !== p2){ setStatus($('#reStatus'), 'Passwords do not match.', 'error'); return; }
+        show($('#reLoad')); setStatus($('#reStatus'), 'Creating your account…');
+        try{
+            await auth.register(u, p1);
+            setStatus($('#reStatus'), 'Account created! You can now log in.', 'ok');
+            $('#liUser').value = u; $('#liPass').focus();
+        }catch(err){ setStatus($('#reStatus'), err.message, 'error'); }
+        finally{ hide($('#reLoad')); }
+    });
+    $('#registerReset').addEventListener('click', ()=>{ $('#registerForm').reset(); setStatus($('#reStatus'), ''); });
+
+    // Profile form
+    $('#profileForm').addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const name = $('#pfDisplay').value.trim();
+        const ok = auth.updateProfile({ displayName: name });
+        if(ok){ setStatus($('#pfStatus'), 'Profile saved.','ok'); refreshDashboard(); }
+        else{ setStatus($('#pfStatus'), 'Failed to save profile.','error'); }
+    });
+
+    // Logout
+    $('#logoutBtn').addEventListener('click', ()=>{ auth.logout(); refreshDashboard(); location.hash = '#home'; });
+
+    // Data export/import/seed/wipe
+    $('#exportBtn').addEventListener('click', ()=>{
+        const data = {
+            users: store.read(KEYS.USERS, []),
+            currentUser: store.read(KEYS.CURRENT, null)
+        };
+        $('#dataArea').value = JSON.stringify(data, null, 2);
+        setStatus($('#pfStatus'), 'Data exported to text area.','ok');
+    });
+    $('#importBtn').addEventListener('click', ()=>{
+        try{
+            const obj = JSON.parse($('#dataArea').value);
+            if(!Array.isArray(obj.users)) throw new Error('Invalid format: users must be an array.');
+            store.write(KEYS.USERS, obj.users);
+            if(obj.currentUser) store.write(KEYS.CURRENT, obj.currentUser); else store.remove(KEYS.CURRENT);
+            setStatus($('#pfStatus'), 'Data imported.','ok');
+            refreshDashboard();
+        }catch(err){ setStatus($('#pfStatus'), 'Import error: '+err.message, 'error'); }
+    });
+    $('#seedBtn').addEventListener('click', async()=>{
+        try{
+            const users = store.read(KEYS.USERS, []);
+            const has = users.some(u=>u.username==='demo');
+            if(!has){
+                const passHash = await hash('demo123');
+                users.push({ username:'demo', passHash, createdAt: Date.now(), profile:{ displayName:'Demo User' }});
+                store.write(KEYS.USERS, users);
+                setStatus($('#pfStatus'), 'Demo user seeded.','ok');
+            } else {
+                setStatus($('#pfStatus'), 'Demo user already exists.','warn');
+            }
+        }catch(err){ setStatus($('#pfStatus'), 'Seed error: '+err.message,'error'); }
+    });
+    $('#wipeBtn').addEventListener('click', ()=>{
+        if(confirm('This will remove all local data for this site. Proceed?')){
+            try{ store.remove(KEYS.USERS); store.remove(KEYS.CURRENT); $('#dataArea').value=''; setStatus($('#pfStatus'), 'All local data cleared.','ok'); refreshDashboard(); }
+            catch(err){ setStatus($('#pfStatus'), 'Wipe failed: '+err.message, 'error'); }
+        }
+    });
+
+    // Initial UI sync on load
+    window.addEventListener('load', ()=>{ refreshDashboard(); });
+    </script>
+</body>
+</html>
