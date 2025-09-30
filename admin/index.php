@@ -54,77 +54,140 @@ if(isset($_POST['submit'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-CARE | Admin login</title>
-    <link rel="icon" href="logopta.png" type="image/png">
-    <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link type="text/css" href="css/theme.css" rel="stylesheet">
-    <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
-    <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-CARE | Admin Login</title>
+  <link rel="icon" href="logopta.png" type="image/png">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      margin: 0;
+    }
+    .navbar {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0 10px 0;
+    }
+    .logo {
+      width: 100px;
+      margin: 0 10px;
+    }
+    .welcome-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: #ffdd57;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .system-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      color: #ffffff;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .module-login {
+      background: #fff;
+      color: #333;
+      border-radius: 1.2rem;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 420px;
+      margin: 0 auto;
+      animation: fadeIn 0.9s ease;
+    }
+    .btn-gradient {
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      color: #fff;
+      border: none;
+    }
+    .btn-gradient:hover { opacity: 0.9; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 15px;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                    <i class="icon-reorder shaded"></i>
-                </a>
-                <a class="brand" href="../index.html">E-CARE | Admin</a>
-                <div class="nav-collapse collapse navbar-inverse-collapse">
-                    <ul class="nav pull-right">
-                        <li><a href="../index.html">Back to Portal</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">E-CARE | Admin</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Back to Portal</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="module module-login span4 offset4">
-                    <form class="form-vertical" method="post">
-                        <div class="module-head">
-                            <h3>Sign In</h3>
-                        </div>
-                        <span style="color:red;"><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg'] = ""); ?></span>
-                        <div class="module-body">
-                            <div class="control-group">
-                                <div class="controls row-fluid">
-                                    <input class="span12" type="text" id="inputEmail" name="username" placeholder="Username">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="controls row-fluid">
-                                    <input class="span12" type="password" id="inputPassword" name="password" placeholder="Password">
-                                    <a href="forgot-password.php">Forgot Password ?</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="module-foot">
-                            <div class="control-group">
-                                <div class="controls clearfix">
-                                    <button type="submit" class="btn btn-primary pull-right" name="submit">Login</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+  <!-- Logo + Welcome -->
+  <div class="logo-container">
+    <img src="logopta.png" alt="PTA Services Logo" class="logo">
+    <img src="logoe-care2.png" alt="e-care Logo" class="logo">
+  </div>
+  <div class="welcome-text">WELCOME TO</div>
+  <div class="system-text">E-CARE</div>
 
-    <div class="footer">
-        <div class="container">
-            <b class="copyright">© DFKIKMBesut 2025 CMS</b> All rights reserved.
+  <!-- Login Module -->
+  <div class="module-login">
+    <h3 class="fw-bold text-primary mb-3">Admin Sign In</h3>
+
+    <!-- Alerts -->
+    <?php if ($errormsg): ?>
+      <div class="alert alert-danger py-2"><?= htmlentities($errormsg) ?></div>
+    <?php endif; ?>
+    <?php if ($msg): ?>
+      <div class="alert alert-success py-2"><?= htmlentities($msg) ?></div>
+    <?php endif; ?>
+
+    <!-- Form -->
+    <form method="post" name="login">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" placeholder="masukkan username" required autofocus>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+        <div class="mt-1">
+          <a href="forgot-password.php" class="text-decoration-none text-primary fw-semibold">Forgot Password?</a>
         </div>
-    </div>
-    <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-    <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+      </div>
+      <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+      <button type="submit" name="submit" class="btn btn-gradient w-100">Login</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 DFKIKMBesut. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
